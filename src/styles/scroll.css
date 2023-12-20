@@ -1,0 +1,11 @@
+/* Barra de desplazamiento general */
+div::-webkit-scrollbar {
+    width: 10px;
+    
+}
+  
+  /* Barra de desplazamiento en el eje vertical */
+div::-webkit-scrollbar-thumb {
+    background-color: #0af;
+    border-radius: 10px;
+}
