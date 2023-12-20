@@ -40,7 +40,7 @@ const App = () => {
     <div className="flex-col">
       <section className="h-[93vh]">
         <header className="bg-sky-900">
-          <h1 className="text-white text-center py-2 font-bold">Music</h1>
+          <h1 className="text-white text-center py-2 font-bold">Musica</h1>
         </header>
         <MusicMapper canciones={canciones} cambiarCancion={cambiarCancion}/>
       </section>
