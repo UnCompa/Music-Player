@@ -1,20 +1,7 @@
 audio::-webkit-media-controls {
-    background: #0af;
+  background: #006394;
+  border-top: 2px solid #fff;
 }
 audio::-webkit-media-controls-panel {
-    background: #0af;
+  background: #006394;
 }
-audio::-webkit-media-controls-play-button {
-    background-color: #fff;
-    border-radius: 50%;
-}
-audio::-webkit-media-controls-timeline-track {
-    /* Estilos para la pista de la barra de progreso de tiempo */
-    background-color: red;
-  }
-  
-  /* Puntero en la barra de progreso de tiempo */
-  audio::-webkit-media-controls-timeline-thumb {
-    /* Estilos para el puntero en la barra de progreso de tiempo */
-    background-color: red;
-  }

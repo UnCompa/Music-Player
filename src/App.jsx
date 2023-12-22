@@ -15,7 +15,7 @@ const App = () => {
     const cargarCanciones = async () => {
       try {
         // Construye la URL directa al archivo JSON en la carpeta public
-        const url = "/musics.json?url=" + new Date().getTime();
+        const url = "/Music-Player/musics.json?url=" + new Date().getTime();
 
         // Realiza la solicitud para cargar el archivo JSON
         const response = await fetch(url);
@@ -39,7 +39,7 @@ const App = () => {
   return (
     <div className="flex-col">
       <section className="h-[93vh]">
-        <header className="bg-sky-900">
+        <header className="bg-sky-600">
           <h1 className="text-white text-center py-2 font-bold">Musica</h1>
         </header>
         <MusicMapper canciones={canciones} cambiarCancion={cambiarCancion}/>
@@ -47,7 +47,6 @@ const App = () => {
       <section className="shadow-xl">
         <Player cancionActual={cancionActual}/>
       </section>
-      {/* <NewPlayer tracklist={canciones}/> */}
     </div>
   );
 };

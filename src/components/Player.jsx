@@ -2,10 +2,12 @@
 import ReactPlayer from "react-player";
 import './../styles/player.css'
 export const Player = ({cancionActual}) => {
+
+  cancionActual = `/Music-Player/${cancionActual}`
   return (
-      <div className="bg-red-500">
+      <div>
         {cancionActual && (
-          <div className="bg-slate-900/50 h-12 relative overflow-hidden bottom-0 pt-[3.1em]">
+          <div className="h-12 relative overflow-hidden bottom-0 pt-[3.1em]">
             <ReactPlayer
               url={cancionActual}
               controls
