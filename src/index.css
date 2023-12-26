@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Estilos para el pulgar (thumb) del input de rango */
+input[type="range"]::-webkit-slider-thumb {
+    width: 16px; /* Ancho del pulgar */
+    height: 16px; /* Altura del pulgar */
+    background-color: #fff; /* Color del pulgar */
+    border-radius: 50%; /* Borde redondeado para hacerlo circular */
+    appearance: none;
+  }
+  

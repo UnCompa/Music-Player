@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { Player } from "./components/Player";
 import { MusicMapper } from "./components/MusicMapper";
 import { useState } from "react";
-// import Player from "@";
-// import "@madzadev/audio-player/dist/index.css";
-// import { NewPlayer } from "./components/NewPlayer";
+import AudioPlayer from "./components/AudioPlayer";
+import SongList from "./components/SongList";
 
 const App = () => {
   const [canciones, setCanciones] = useState([]);
   const [cancionActual, setCancionActual] = useState(null);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
   useEffect(() => {
     const cargarCanciones = async () => {
@@ -28,24 +28,29 @@ const App = () => {
         console.error("Error al cargar las canciones:", error);
       }
     };
-
     cargarCanciones();
   }, []);
 
+  const handleSongClick = (index) => {
+    setCurrentSongIndex(index);
+    setCancionActual(canciones[index]);
+  };
   const cambiarCancion = (index) => {
     setCancionActual(canciones[index]);
   };
-
   return (
     <div className="flex-col">
-      <section className="h-[93vh]">
-        <header className="bg-sky-600">
-          <h1 className="text-white text-center py-2 font-bold">Musica</h1>
-        </header>
-        <MusicMapper canciones={canciones} cambiarCancion={cambiarCancion}/>
+      <header className="bg-sky-600">
+        <h1 className="text-white text-center py-2 font-bold">Musica</h1>
+      </header>
+      <section>
+        <SongList songs={canciones} onSongClick={handleSongClick} />
       </section>
-      <section className="shadow-xl">
-        <Player cancionActual={cancionActual}/>
+      <section>
+        <AudioPlayer
+          songs={canciones}
+          currentSongListIndex={currentSongIndex}
+        />
       </section>
     </div>
   );

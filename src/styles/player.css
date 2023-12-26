@@ -1,7 +1,17 @@
-audio::-webkit-media-controls {
-  background: #006394;
-  border-top: 2px solid #fff;
+input[type="range"]::-webkit-slider-thumb {
+  /* Estilo para el pulgar en navegadores WebKit (Chrome, Safari, etc.) */
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--thumb-color);
+  border: none;
+  border-radius: 50%;
 }
-audio::-webkit-media-controls-panel {
-  background: #006394;
+
+input[type="range"]::-moz-range-thumb {
+  /* Estilo para el pulgar en navegadores Firefox */
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--thumb-color);
+  border: none;
+  border-radius: 50%;
 }
